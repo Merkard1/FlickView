@@ -6,7 +6,7 @@ function Header() {
     <header className="main-header">
       <div className="container">
         <div className="logo">
-          <a href="/">FlickView</a>
+          <Link href="/">FlickView</Link>
         </div>
         <nav>
           <Link className="nav-link" to="/">

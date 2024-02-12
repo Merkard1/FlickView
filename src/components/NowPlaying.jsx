@@ -3,10 +3,12 @@ import { fetchAPIData } from "../hooks/fetchAPIData";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
+import useMedia from "../hooks/useMedia";
 
 function NowPlaying() {
   const [movie, setMovie] = useState([]);
   const [loaded, setLoaded] = useState(false);
+  const isAboveMediumScreens = useMedia("(max-width: 768px)");
 
   useEffect(() => {
     const fetchPopularMovies = async () => {
@@ -27,7 +29,11 @@ function NowPlaying() {
     <section className="now-playing">
       <h2>Now Playing</h2>
       <div className="swiper">
-        <Swiper className="swiper" spaceBetween={40} slidesPerView={5}>
+        <Swiper
+          className="swiper"
+          spaceBetween={40}
+          slidesPerView={isAboveMediumScreens ? 1 : 4}
+        >
           {movie.map((movie) => (
             <SwiperSlide key={movie.id} className="swiper-wrapper">
               <Link to={`/movie-details/id=${movie.id}`} id={movie.id}>

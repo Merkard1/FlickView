@@ -6,6 +6,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  /* cursor: none; */
 }
 
 :root {
@@ -119,7 +120,8 @@ ul {
 .card {
   background: #04376b;
   padding: 5px;
-  max-width: 300px;
+  max-width: 320px;
+  width: 100%;
 }
 
 .card img {
@@ -358,4 +360,15 @@ section h2 {
     0.8
   ); /* Optional: add a semi-transparent overlay */
   z-index: 9999;
+}
+
+@media screen and (max-width: 900px) {
+  section.now-playing {
+  }
+  .swiper-rating {
+    font-size: 0.8rem;
+  }
+  .card {
+    place-self: center;
+  }
 }
