@@ -27,10 +27,11 @@ function Details({ type }) {
   const renderEntertainmentDetails = () => (
     <section className="container">
       <BackButton Text={`Back To ${type === "movie" ? "Movies" : "Shows"}`} />
+      <h2>{entertainment.title || entertainment.name}</h2>
       {loaded && (
         <div id={`${type}-details`}>
           <div className="details-top">
-            <div>
+            <div className="details">
               <img
                 src={
                   entertainment.poster_path
@@ -42,7 +43,6 @@ function Details({ type }) {
               />
             </div>
             <div>
-              <h2>{entertainment.title || entertainment.name}</h2>
               <p>
                 <FaRegStar /> {entertainment.vote_average.toFixed(1)} / 10
               </p>

@@ -219,6 +219,7 @@ section h2 {
 }
 
 /* Movie Details */
+
 .details-top {
   display: flex;
   justify-content: space-between;
@@ -370,5 +371,12 @@ section h2 {
   }
   .card {
     place-self: center;
+  }
+  .details-top {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .details-top img {
+    width: 100%;
   }
 }
